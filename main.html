@@ -1,0 +1,44 @@
+<!DOCTYPE>
+	<html ng-app='myApp'>
+	<head>
+		
+		<script src = 'https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.9/angular.js'></script>
+		<script src = 'main.js'></script>
+		<script src = 'factory.js'></script>
+		<link href = 'https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css' type = 'text/css' rel = 'stylesheet'>
+		<link href = 'main.css' type = 'text/css' rel ='stylesheet'>
+
+	</head>
+
+	<body ng-controller='mainController'>
+
+		<div>
+			<img src='https://placeholdit.imgix.net/~text?txtsize=33&txt=350%C3%97350&w=350&h=350'/>
+		</div>
+
+		<form class = 'editForm' ng-show = 'editActive == true' ng-submit = 'editActive = !editActive'>
+			<input ng-model = 'sections[0].content' placeholder = 'main content'>
+			<input ng-model = 'sections[1].content' placeholder = 'favorite books'>
+			<input ng-model = 'sections[2].content' placeholder = 'favorite js libraries'>
+			<input type='submit'>
+		</form>
+		<button ng-click = 'editActive = !editActive'> press to edit your content </button>
+
+		<h1>{{greeting}}</h1> 
+
+		<div ng-repeat = "profsec in sections">
+			<h3>{{profsec.name}}</h3>
+			<p>{{profsec.content}}</p>
+			<p>{{$index}}</p>
+		</div>
+
+		
+
+
+
+
+
+
+
+	</body>
+	</html>
